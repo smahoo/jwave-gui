@@ -11,6 +11,7 @@ import de.smahoo.jwave.event.JWaveEventListener;
 import de.smahoo.jwave.event.JWaveNodeDataEvent;
 import de.smahoo.jwave.event.JWaveNodeEvent;
 import de.smahoo.jwave.node.JWaveNode;
+import de.smahoo.jwave.specification.JWaveSpecification;
 import gnu.io.CommPort;
 import gnu.io.CommPortIdentifier;
 import gnu.io.NoSuchPortException;
@@ -68,8 +69,9 @@ public class FrameTestZWave extends JFrame{
 		try {
 			
 			//cntrl = new TestZWaveCntrl();  // is not working for Mac -> specification file needs to be given to constructor
-			String specPath = System.getProperty("user.dir")+System.getProperty("file.separator")+"cnf"+System.getProperty("file.separator")+"cmd_classes.xml";
-			JWaveCommandClassSpecification cmdClassSpec = new JWaveCommandClassSpecification(specPath);
+			//String specPath = System.getProperty("user.dir")+System.getProperty("file.separator")+"cnf"+System.getProperty("file.separator")+"cmd_classes.xml";
+			//JWaveCommandClassSpecification cmdClassSpec = new JWaveCommandClassSpecification(specPath);
+			JWaveCommandClassSpecification cmdClassSpec = JWaveSpecification.loadDefaultSpecification();
 			cntrl = new ExtendedJWaveCntrl(cmdClassSpec);
 			
 		} catch (Exception exc){
