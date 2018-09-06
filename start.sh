@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-mvn exec:java -Dexec.mainClass="de.smahoo.jwave.JWaveGuiMain"
+mvn exec:java -Dexec.mainClass=" org.knx.iot.loadmgnt.poc.POC"
